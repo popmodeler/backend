@@ -72,7 +72,7 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->put('external_collaboration/{id}', 'ExternalCollaborationController@update');
 
 
-        $router->post('store','UploadController@store');
+        $router->post('store', 'UploadController@store');
 
 
 
@@ -87,6 +87,8 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->put('popmission/{id}', 'PopMissionsController@update');
         $router->delete('popmission/{id}', 'PopMissionsController@delete');
 
+        $router->post('mission_process', 'MissionProcessController@create');
+
 
 
 
@@ -94,7 +96,7 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->get('constituent_process', 'ConstituentProcessController@showAll');
         $router->post('constituent_process', 'ConstituentProcessController@create');
         $router->put('constituent_process/{id}', 'ConstituentProcessController@update');
-        
+
         $router->delete('constituent_process/{id}', 'ConstituentProcessController@delete');
 
         $router->get('users', 'AuthController@getUsers');

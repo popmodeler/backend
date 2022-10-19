@@ -23,8 +23,8 @@ class CreateMissionProcessesTable extends Migration
             $table->foreign('pop_id')->references('id')->on('pops');
             $table->date('entry_date')->notNullable();
             $table->date('exit_date')->nullable();
-            $table->unique('pop_mission_id', 'constituent_process_id');
-            $table->unique('pop_mission_id', 'pop_id');
+            $table->unique(['pop_mission_id', 'constituent_process_id']);
+            // $table->unique('pop_mission_id', 'pop_id');
             $table->timestamps();
             $table->softDeletes();
         });

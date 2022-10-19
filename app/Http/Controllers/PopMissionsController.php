@@ -36,7 +36,6 @@ class PopMissionsController extends Controller
     }
     public function update($id, Request $request)
     {
-        
         $mission = PopMission::findOrFail($id);
         $mission->update($request->all());
 

@@ -10,13 +10,13 @@ class PopMission extends Model
     use HasFactory;
 
     protected $fillable = [
-       
+
         'status',
         'description',
         'pop_id',
         'tittle',
     ];
-   
+
     public function pop()
     {
         return $this->belongsTo('App\Models\Pop', 'id', 'pop_id');

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TemporaryFile;
 
-
 class UploadController extends Controller
 {
     /**
@@ -17,9 +16,9 @@ class UploadController extends Controller
     {
         //
     }
-    public function store(Request $request )
+    public function store(Request $request)
     {
-        if($request->hasFile('files')){ 
+        if ($request->hasFile('files')) {
             $file = $request->file('files');
             $filename =time().$file->getClientOriginalName();
             $folder = uniqid() . '-' .time();
@@ -32,12 +31,12 @@ class UploadController extends Controller
             // ]);
             return $filename;
         }
-     
-        
+
+
         return '';
     }
 
-    
+
 
     //
 }

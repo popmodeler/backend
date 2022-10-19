@@ -24,12 +24,12 @@ class ConstituentProcessController extends Controller
     public function delete($id)
     {
         $delete=ConstituentProcess::findOrFail($id);
-    
 
-        
-       unlink('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
+
+
+        unlink('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
     //    rmdir('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
-      $delete->delete();
+        $delete->delete();
 
         return response('Deleted successfully', 200);
     }
@@ -92,7 +92,7 @@ class ConstituentProcessController extends Controller
         // } else {
         //     return $this->responseRequestError('File not found');
         // }
-    
+
 
     protected function responseRequestSuccess($ret)
     {
