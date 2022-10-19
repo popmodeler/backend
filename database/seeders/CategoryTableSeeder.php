@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class CategoryTableSeeder extends Seeder
@@ -13,6 +14,14 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Category::factory()->count(10)->create();
+        Category::factory()->create([
+            'name' => 'Sale',
+        ]);
+        Category::factory()->create([
+            'name' => 'Transport',
+        ]);
+        Category::factory()->create([
+            'name' => 'Logistic',
+        ]);
     }
 }

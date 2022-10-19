@@ -18,7 +18,7 @@ class PopsController extends Controller
     }
     public function showAll()
     {
-        $result = Pop::with('Pop','Pops')->get();
+        $result = Pop::with('Pop', 'Pops')->get();
 
 
         return response()->json($result);
@@ -37,7 +37,6 @@ class PopsController extends Controller
     }
     public function update($id, Request $request)
     {
-        
         $pop = Pop::findOrFail($id);
         $pop->update($request->all());
 
