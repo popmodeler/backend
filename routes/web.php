@@ -14,11 +14,6 @@
 */
 
 
-
-$router->get('/', function () use ($router) {
-        return $router->app->version();
-});
-
 $router->group(['prefix' => 'api'], function ($router) {
         $router->post('signup', 'AuthController@register');
         $router->post('signin', 'AuthController@login');
@@ -103,4 +98,8 @@ $router->group(['prefix' => 'api'], function ($router) {
                 $router->get('permissions/{id}', 'PermissionController@showAll');
                 $router->post('permission', 'PermissionController@create');
         });
+});
+
+$router->get('{any:.*}', function () {
+        return view('index');
 });
