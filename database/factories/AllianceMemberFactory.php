@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AllianceMember>
  */
-class CategoryFactory extends Factory
+class AllianceMemberFactory extends Factory
 {
     /**
      * Define the model's default state.
