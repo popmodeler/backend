@@ -23,13 +23,13 @@ class ConstituentProcessController extends Controller
     }
     public function delete($id)
     {
-        $delete=ConstituentProcess::findOrFail($id);
-    
+        $delete = ConstituentProcess::findOrFail($id);
 
-        
-       unlink('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
-    //    rmdir('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
-      $delete->delete();
+
+
+        unlink('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\' . $delete->file_name);
+        //    rmdir('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
+        $delete->delete();
 
         return response('Deleted successfully', 200);
     }
@@ -48,51 +48,50 @@ class ConstituentProcessController extends Controller
         return response()->json($constituent, 200);
     }
 
-        // $process = ConstituentProcess::create([
-        //     'name'=>$request->name,
-        //     'description'=>$request->description,
-        //     'alliance_member_id'=>$request->alliance_member_id,
-        //     'file_name'=>$request->file,
-        //     'file_type'=>$request->alliance_member_id,
-        //     'location'=>'ConstituenProcess'
-        //     'user_id'=>$request->user_id,
-        // ]);
-        // $temporaryfile=TemporaryFile::where('folder',$request->file)->first();
-        // dd($temporaryfile);
-        // if($temporaryfile){
+    // $process = ConstituentProcess::create([
+    //     'name'=>$request->name,
+    //     'description'=>$request->description,
+    //     'alliance_member_id'=>$request->alliance_member_id,
+    //     'file_name'=>$request->file,
+    //     'file_type'=>$request->alliance_member_id,
+    //     'location'=>'ConstituenProcess'
+    //     'user_id'=>$request->user_id,
+    // ]);
+    // $temporaryfile=TemporaryFile::where('folder',$request->file)->first();
+    // dd($temporaryfile);
+    // if($temporaryfile){
 
-        //     $process->addMedia(storage_path('public/ConstituentProcess/'.$temporaryfile->filename))
-        //     ->toMediaCollection('files');
-        //     rmdir(storage_path('public/ConstituentProcess/'.$temporaryfile->filename));
-        //     $temporaryfile->delete();
-        // }
-        // $product = new ConstituentProcess();
+    //     $process->addMedia(storage_path('public/ConstituentProcess/'.$temporaryfile->filename))
+    //     ->toMediaCollection('files');
+    //     rmdir(storage_path('public/ConstituentProcess/'.$temporaryfile->filename));
+    //     $temporaryfile->delete();
+    // }
+    // $product = new ConstituentProcess();
 
-        // if ($request->hasFile('file')) {
-        //     $file = $request->file('file');
+    // if ($request->hasFile('file')) {
+    //     $file = $request->file('file');
 
-        //     $allowedfileExtention = ['pdf','png','jpeg', 'bpmn'];
-        //     $extention = $file->getClientOriginalExtension();
-        //     $check = in_array($extention, $allowedfileExtention);
-        //     if ($check) {
-        //         $name =time().$file->getClientOriginalName();
-        //         $file->move('ConstituentProcess', $name);
-        //         $product->file_name = $name;
-        //         $product->file_type =
+    //     $allowedfileExtention = ['pdf','png','jpeg', 'bpmn'];
+    //     $extention = $file->getClientOriginalExtension();
+    //     $check = in_array($extention, $allowedfileExtention);
+    //     if ($check) {
+    //         $name =time().$file->getClientOriginalName();
+    //         $file->move('ConstituentProcess', $name);
+    //         $product->file_name = $name;
+    //         $product->file_type =
 
-        //         $product->location = $request->input('/ConstituentProcess');
+    //         $product->location = $request->input('/ConstituentProcess');
 
-        //         $product->name = $request->input('name');
-        //         $product->description = $request->input('description');
-        //         $product->alliance_member_id = $request->input('alliance_member_id');
-        //     }
-        //     $product->save();
+    //         $product->name = $request->input('name');
+    //         $product->description = $request->input('description');
+    //         $product->alliance_member_id = $request->input('alliance_member_id');
+    //     }
+    //     $product->save();
 
-        //     return $this->responseRequestSuccess($product);
-        // } else {
-        //     return $this->responseRequestError('File not found');
-        // }
-    
+    //     return $this->responseRequestSuccess($product);
+    // } else {
+    //     return $this->responseRequestError('File not found');
+    // }
 
     protected function responseRequestSuccess($ret)
     {
