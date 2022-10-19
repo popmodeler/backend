@@ -102,4 +102,8 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->get('permissions/{id}', 'PermissionController@showAll');
         $router->post('permission', 'PermissionController@create');
     });
+
+    $router->get('{any:.*}', function () {
+        return view('index');
+    });
 });
