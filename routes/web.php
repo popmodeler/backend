@@ -13,10 +13,8 @@
 |
 */
 
-
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('{any:.*}', function () {
+    return view('index');
 });
 
 $router->group(['prefix' => 'api'], function ($router) {
@@ -103,7 +101,4 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->post('permission', 'PermissionController@create');
     });
 
-    $router->get('{any:.*}', function () {
-        return view('index');
-    });
 });
