@@ -27,7 +27,7 @@ class AllianceMemberController extends Controller
 
     public function showAll()
     {
-        $result = AllianceMember::with('category','constituentProcess.users')->get();
+        $result = AllianceMember::with('category', 'constituentProcess', 'constituentProcess.users')->get();
         return response()->json($result);
     }
     public function showOne($cnpj)

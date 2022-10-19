@@ -18,7 +18,6 @@ class ExternalCollaborationController extends Controller
     }
     public function showAll()
     {
-
         // return response()->json(ExternalCollaboration::all(), 200);
         $result = ExternalCollaboration::with('businessCollaborationMain')->get();
         return response()->json($result);
