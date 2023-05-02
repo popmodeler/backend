@@ -26,4 +26,12 @@ class Pop extends Model
     {
         return $this->hasMany('App\Models\PopMission', 'pop_id', 'id');
     }
+    public function overallView()
+    {
+        return $this->hasOne('App\Models\OverallView', 'id', 'id');
+    }
+    public function PopMissionModel()
+    {
+        return $this->hasOne('App\Models\PopMissionsModel', 'id', 'id');
+    }
 }

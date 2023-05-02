@@ -2,7 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+
 use Closure;
+
 
 class CorsMiddleware
 {
@@ -16,7 +19,7 @@ class CorsMiddleware
     public function handle($request, Closure $next)
     {
         $headers = [
-            'Access-Control-Allow-Origin'      => 'http://popmodeler.ledes.net',
+            'Access-Control-Allow-Origin'      => 'http://localhost:3000',
             'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS, PUT, DELETE',
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Max-Age'           => '86400',
@@ -27,11 +30,21 @@ class CorsMiddleware
             return response()->json('{"method":"OPTIONS"}', 200, $headers);
         }
 
+
+
         $response = $next($request);
+
         foreach ($headers as $key => $value) {
             $response->header($key, $value);
         }
 
         return $response;
+        // $response = $next($request);
+        // $response->headers->set('Access-Control-Allow-Origin', 'http://localhost:3000');
+        // $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+        // $response->headers->set('Access-Control-Allow-Credentials', 'true');
+
+        // $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-XSRF-TOKEN, Authorization, Authentication, X-Requested-With');
+        // return $response;
     }
 }
