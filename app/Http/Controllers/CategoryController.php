@@ -27,6 +27,11 @@ class CategoryController extends Controller
 
         return response()->json($category, 201);
     }
-
+    public function showOneCategory($id)
+    {
+        return response()->json(Category::find($id));
+        
+    }
+    
     //
 }

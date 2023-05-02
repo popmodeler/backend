@@ -17,6 +17,13 @@ class ConstituentProcessController extends Controller
     {
         //
     }
+    public function showOne($id)
+    {
+
+        return response()->json(ConstituentProcess::find($id));
+    }
+
+
     public function showAll()
     {
         return response()->json(ConstituentProcess::all(), 200);

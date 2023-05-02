@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Gabriel',
-            'email' => 'bielsmi03@gmail.com',
+            'email' => 'bielsmi03@hotmail.com',
             'password' => Hash::make(123456),
         ]);
         $this->call(CategoryTableSeeder::class);

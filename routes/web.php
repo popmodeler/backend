@@ -24,6 +24,8 @@ $router->group(['prefix' => 'api'], function ($router) {
 
         $router->group(['middleware' => 'auth'], function ($router) {
                 $router->get('category', 'CategoryController@showAllCategory');
+                $router->get('category/{id}', 'CategoryController@showOneCategory');
+
                 $router->post('category', 'CategoryController@create');
 
 
@@ -71,10 +73,14 @@ $router->group(['prefix' => 'api'], function ($router) {
 
 
 
-                $router->get('pop/{id}', 'PopsController@showOne');
+                // $router->get('pop/{filename}', 'PopsController@showOne');
                 $router->get('pop', 'PopsController@showAll');
                 $router->post('pop', 'PopsController@create');
                 $router->put('pop/{id}', 'PopsController@update');
+                $router->get('pop/{id}', 'PopsController@showOne');
+                $router->get('pop/overall_view/{id}', 'PopsController@showOverallView');
+
+
                 $router->delete('pop/{id}', 'PopsController@delete');
 
 
@@ -83,6 +89,14 @@ $router->group(['prefix' => 'api'], function ($router) {
                 $router->delete('popmission/{id}', 'PopMissionsController@delete');
 
                 $router->post('mission_process', 'MissionProcessController@create');
+
+
+
+                $router->put('overall_view/{id}', 'OverallViewController@update');
+                $router->post('overall_view', 'OverallViewController@create');
+
+                $router->put('popMissionModel/{id}', 'PopMissionModelController@update');
+                $router->post('popMissionModel', 'PopMissionModelController@create');
 
 
 

@@ -28,4 +28,11 @@ class ExternalCollaboration extends Model
     {
         return $this->belongsTo('App\Models\BusinessAlliance', 'business_collaboration_partner_id', 'id');
     }
+
+    public function pops()
+    {
+        return $this->hasMany('App\Models\PopMission', 'business_collaboration_main_id', 'id');
+    }
+
+  
 }

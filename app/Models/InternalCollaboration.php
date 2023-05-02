@@ -27,4 +27,9 @@ class InternalCollaboration extends Model
     {
         return $this->belongsTo('App\Models\BusinessAlliance', 'id', 'business_alliance_id');
     }
+    public function constituentProcess()
+    {
+
+        return $this->hasMany('App\Models\ConstituentProcess', 'business_alliance_id', 'id');
+    }
 }
