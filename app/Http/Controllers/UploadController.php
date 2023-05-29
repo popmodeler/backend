@@ -16,6 +16,7 @@ class UploadController extends Controller
     {
         //
     }
+
     public function store(Request $request)
     {
         if ($request->hasFile('files')) {
@@ -23,20 +24,9 @@ class UploadController extends Controller
             $filename = time() . $file->getClientOriginalName();
             $folder = uniqid() . '-' . time();
             $file->move('ConstituentProcess', $filename);
-            // $file->storeAs('files/'.$folder,$filename);
 
-            // TemporaryFile::create([
-            //     'folder'=>'ConstituentProcess',
-            //     'filename'=>$filename,
-            // ]);
             return $filename;
         }
-
-
         return '';
     }
-
-
-
-    //
 }
