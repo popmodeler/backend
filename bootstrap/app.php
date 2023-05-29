@@ -82,11 +82,7 @@ $app->configure('jwt');
 $app->register(Illuminate\Mail\MailServiceProvider::class);
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
-]);
-$app->middleware([
-
-    App\Http\Middleware\CorsMiddleware::class // Add this
-
+    'cors' => App\Http\Middleware\CorsMiddleware::class
 ]);
 
 /*
