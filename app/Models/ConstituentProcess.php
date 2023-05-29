@@ -15,6 +15,7 @@ class ConstituentProcess extends Model
         'description',
         'file_name',
         'file_type',
+        'file_text',
         'location',
         'alliance_member_id',
         'user_id',
