@@ -20,7 +20,7 @@ class BusinessAllianceController extends Controller
     {
         // $result = BusinessAlliance::where('is_public', true)->orWhere('user_id', $id)->with('users', 'responsableMember', 'internalCollaborations.allianceMember.users', 'externalCollaborations.businessCollaborationMain', 'externalCollaborations.businessCollaborationPartner')->get();
         // return response()->json($result);
-        $result = BusinessAlliance::with(['pops.popMissionModel', 'pops.overallView', 'pops.popMissions.missionProcesses.pop', 'pops.popMissions.missionProcesses.constituentProcess', 'permission', 'users', 'responsableMember', 'internalCollaborations.allianceMember.constituentProcess', 'internalCollaborations.allianceMember.users', 'externalCollaborations.businessCollaborationMain', 'externalCollaborations.businessCollaborationPartner.pops'])->where('is_public', true)->orWhere('user_id', $id)->orWhereHas('permission')->get();
+        $result = BusinessAlliance::with(['pops.popMissions.detailedView','pops.popMissionModel', 'pops.overallView', 'pops.popMissions.missionProcesses.pop', 'pops.popMissions.missionProcesses.constituentProcess', 'permission', 'users', 'responsableMember', 'internalCollaborations.allianceMember.constituentProcess', 'internalCollaborations.allianceMember.users', 'externalCollaborations.businessCollaborationMain', 'externalCollaborations.businessCollaborationPartner.pops'])->where('is_public', true)->orWhere('user_id', $id)->orWhereHas('permission')->get();
         return response()->json($result);
     }
     public function showAllWithPermission($id)

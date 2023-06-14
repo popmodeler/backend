@@ -98,6 +98,8 @@ $router->group(['prefix' => 'api'], function ($router) {
                 $router->put('popMissionModel/{id}', 'PopMissionModelController@update');
                 $router->post('popMissionModel', 'PopMissionModelController@create');
 
+                $router->put('popMissionDetailedModel/{id}', 'PopMissionDetailedModelController@update');
+                $router->post('popMissionDetailedModel', 'PopMissionDetailedModelController@create');
 
 
 
