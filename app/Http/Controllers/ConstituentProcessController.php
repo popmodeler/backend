@@ -34,7 +34,7 @@ class ConstituentProcessController extends Controller
 
 
 
-        unlink(public_path("ConstituentProcess"). $delete->file_name);
+        unlink(public_path("ConstituentProcess")."/". $delete->file_name);
         //    rmdir('C:\Users\biels\Desktop\pop-back\public\ConstituentProcess\\'.$delete->file_name);
         $delete->delete();
 
