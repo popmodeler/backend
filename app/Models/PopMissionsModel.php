@@ -17,7 +17,7 @@ class PopMissionsModel extends Model
         'file_text',
         'user_id',
         'pop_id',
-        'constituent_processes_constraints_model',
+        'pop_missions_constraints_model',
         'updated',
     ];
 
