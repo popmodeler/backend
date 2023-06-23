@@ -119,3 +119,7 @@ $router->group(['prefix' => 'api'], function ($router) {
 $router->get('{any:.*}', function () {
         return view('index');
 });
+
+$router->options('{any:.*}', function () {
+    return response('', 200);
+});
