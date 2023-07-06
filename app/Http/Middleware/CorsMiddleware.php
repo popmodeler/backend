@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -15,7 +16,7 @@ class CorsMiddleware
     public function handle($request, Closure $next)
     {
         $IlluminateResponse = 'Illuminate\Http\Response';
-        $SymfonyResopnse = 'Symfony\Component\HttpFoundation\Response'  ;
+        $SymfonyResopnse = 'Symfony\Component\HttpFoundation\Response';
 
         $headers = [
             'Access-Control-Allow-Origin'      => 'http://localhost:3000',
@@ -26,21 +27,20 @@ class CorsMiddleware
             'Access-Control-Expose-Headers'    => 'Content-Disposition',
         ];
 
-        if ($request->isMethod('OPTIONS'))
-        {
+        if ($request->isMethod('OPTIONS')) {
             return response()->json('{"method":"OPTIONS"}', 200, $headers);
         }
 
         $response = $next($request);
 
-        if($response instanceof $IlluminateResponse) {
+        if ($response instanceof $IlluminateResponse) {
             foreach ($headers as $key => $value) {
                 $response->header($key, $value);
             }
             return $response;
         }
 
-        if($response instanceof $SymfonyResopnse) {
+        if ($response instanceof $SymfonyResopnse) {
             foreach ($headers as $key => $value) {
                 $response->headers->set($key, $value);
             }
