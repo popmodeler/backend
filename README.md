@@ -1,18 +1,5 @@
 # PoP Modeler Backend
 
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run dev
-```
-
 ## Docker
 
 - Create .env file from .env.example
