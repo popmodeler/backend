@@ -14,9 +14,9 @@ PoP modeler is a tool used to manage and model large, complex, and dynamic busin
 The project is divided into two parts:
 
 1. Backend (this repo)
-2. Frontend (https://github.com/popmodeler/backend)
+2. Frontend (https://github.com/popmodeler/frontend)
 
-But this repository is referring only to the Frontend part. Frontend need the Backend to be running to work.
+But this repository is referring only to the Backend part.
 
 ### Pre-requisites
 
@@ -30,13 +30,14 @@ In addition, it is good to have an editor to work with the code like [VSCode](ht
 ```bash
 
 # Clone this repository
-$ git clone git@github.com:popmodeler/frontend.git
+$ git clone git@github.com:popmodeler/backend.git
 
 # Access the project folder in your terminal
 $ cd backend
 ```
 
-- Create .env file from .env.example in root folder
+- Create a .env file by copying the .env.example file into the root folder.
+  
 - Run the command below to start container
 
 ```bash
