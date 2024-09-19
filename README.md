@@ -84,3 +84,5 @@ We have developed documentation intended to explain the usage of the features an
 
 The current version of the tool is available for use at: https://popmodeler.ledes.net/
 
+Article associated with the artifact: DOI https://doi.org/10.6084/m9.figshare.27037474
+
